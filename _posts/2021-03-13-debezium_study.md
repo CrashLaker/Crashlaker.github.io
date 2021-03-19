@@ -54,7 +54,31 @@ docker run -it --rm --name mysqlterm \
         -P"$MYSQL_PORT_3306_TCP_PORT" 
         -uroot 
         -p"$MYSQL_ENV_MYSQL_ROOT_PASSWORD"'
+```
+```
+mysql> select * from customers;
++------+------------+-----------+-----------------------+
+| id   | first_name | last_name | email                 |
++------+------------+-----------+-----------------------+
+| 1001 | Sally      | Thomas    | sally.thomas@acme.com |
+| 1002 | George     | Bailey    | gbailey@foobar.com    |
+| 1003 | Edward     | Walker    | ed@walker.com         |
+| 1004 | Anne Marie | Kretchmar | annek@noanswer.org    |
++------+------------+-----------+-----------------------+
+4 rows in set (0.00 sec)
 
+mysql> show tables;
++---------------------+
+| Tables_in_inventory |
++---------------------+
+| addresses           |
+| customers           |
+| geom                |
+| orders              |
+| products            |
+| products_on_hand    |
++---------------------+
+6 rows in set (0.04 sec)
 ```
 
 Register a connector to monitor the inventory database
@@ -94,7 +118,161 @@ docker run -it --rm --name watcher \
         watch-topic -a -k dbserver1.inventory.customers
 ```
 
+#### Utils
 
+##### show topics
+`docker exec -it kafka /kafka/bin/kafka-topics.sh --zookeeper zookeeper:2181 --list`
+
+##### show databases
+`docker exec -it postgres bash -c 'psql -U postgres inventory -c "\l;"'`
+
+##### show tables
+`docker exec -it postgres bash -c 'psql -U postgres inventory -c "\dt;"'`
+
+### Complement
+
+ingest to postgres
+
+https://debezium.io/blog/2017/09/25/streaming-to-another-database/
+
+```bash
+docker run -d --name postgres \
+    -e POSTGRES_PASSWORD=password \
+    -p 5432:5432 \
+    postgres
+```
+
+```bash
+# kafka connect 2
+docker run -dit --name connect2 \
+        -p 8084:8083 \
+        -e GROUP_ID=2 \
+        -e CONFIG_STORAGE_TOPIC=my_connect_configs2 \
+        -e OFFSET_STORAGE_TOPIC=my_connect_offsets2 \
+        -e STATUS_STORAGE_TOPIC=my_connect_statuses2 \
+        --link zookeeper:zookeeper \
+        --link kafka:kafka \
+        --link mysql:mysql \
+        --link postgres:postgres \
+        debezium/connect-jdbc-postgres
+```
+
+```bash
+# docker exec -it kafka /kafka/bin/kafka-topics.sh --zookeeper zookeeper:2181 --list
+
+__consumer_offsets
+dbhistory.inventory
+dbserver1
+dbserver1.inventory.addresses
+dbserver1.inventory.customers
+dbserver1.inventory.geom
+dbserver1.inventory.orders
+dbserver1.inventory.products
+dbserver1.inventory.products_on_hand
+my_connect_configs
+my_connect_configs2
+my_connect_offsets
+my_connect_offsets2
+my_connect_statuses
+my_connect_statuses2
+```
+
+```bash
+curl -i -X POST \
+    -H "Accept:application/json" \
+    -H  "Content-Type:application/json" \
+http://localhost:8084/connectors/ -d '{
+    "name": "jdbc-sink2",
+    "config": {
+        "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+        "tasks.max": "1",
+        "topics": "dbserver1.inventory.customers",
+        "connection.url": "jdbc:postgresql://postgres:5432/inventory?user=postgres&password=password",
+        "transforms": "unwrap",
+        "transforms.unwrap.type": "io.debezium.transforms.UnwrapFromEnvelope",
+        "auto.create": "true",
+        "insert.mode": "upsert",
+        "pk.fields": "id",
+        "pk.mode": "record_value"
+    }
+}'
+```
+
+```
+HTTP/1.1 201 Created
+Date: Thu, 18 Mar 2021 19:21:14 GMT
+Location: http://localhost:8084/connectors/jdbc-sink
+Content-Type: application/json
+Content-Length: 446
+Server: Jetty(9.4.20.v20190813)
+
+
+{
+  "name": "jdbc-sink",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+    "topics": "dbserver1",
+    "connection.url": "jdbc:postgresql://postgres:5432/inventory?user=postgres&password=password",
+    "transforms": "unwrap",
+    "transforms.unwrap.type": "io.debezium.transforms.UnwrapFromEnvelope",
+    "auto.create": "true",
+    "insert.mode": "upsert",
+    "pk.fields": "id",
+    "pk.mode": "record_value",
+    "name": "jdbc-sink"
+  },
+  "tasks": [],
+  "type": "sink"
+}
+```
+
+```bash
+# mysql db
+docker run -dit --name server1 \
+        -p 3307:3306 \
+        -e MYSQL_ROOT_PASSWORD=debezium \
+        -e MYSQL_USER=mysqluser \
+        -e MYSQL_PASSWORD=mysqlpw \
+        debezium/example-mysql:1.4
+
+
+# kafka connect
+docker run -dit --name connect3 \
+        -p 8085:8083 \
+        -e GROUP_ID=1 \
+        -e CONFIG_STORAGE_TOPIC=my_connect_configs3 \
+        -e OFFSET_STORAGE_TOPIC=my_connect_offsets3 \
+        -e STATUS_STORAGE_TOPIC=my_connect_statuses3 \
+        --link zookeeper:zookeeper \
+        --link kafka:kafka \
+        --link server1:server1 \
+        debezium/connect:1.4
+
+curl -i -X POST \
+    -H "Accept:application/json" \
+    -H  "Content-Type:application/json" \
+http://localhost:8085/connectors/ -d '{
+    "name": "inventory-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+        "tasks.max": "1",
+        "database.hostname": "server1",
+        "database.port": "3306",
+        "database.user": "mysqluser",
+        "database.password": "mysqlpw",
+        "database.server.id": "184054",
+        "database.server.name": "dbserver1",
+        "database.include": "inventory",
+        "database.history.kafka.bootstrap.servers": "kafka:9092",
+        "database.history.kafka.topic": "schema-changes.inventory",
+        "transforms": "route",
+        "transforms.route.type": "org.apache.kafka.connect.transforms.RegexRouter",
+        "transforms.route.regex": "([^.]+)\\.([^.]+)\\.([^.]+)",
+        "transforms.route.replacement": "$3"
+    }
+}'
+```
 
 
 
