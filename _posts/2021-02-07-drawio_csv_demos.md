@@ -12,7 +12,7 @@ https://github.com/jgraph/drawio-diagrams/tree/master/examples/csv
 
 
 ## [Habit Tracker app AWS diagram](https://github.com/jgraph/drawio-diagrams/blob/master/examples/csv/habit-tracker-app-aws.txt)
-![](/assets/files/FRl8Bv-QP_0_habit-tracker.svg =300x)
+![](/assets/img/FRl8Bv-QP_habit-tracker.svg){:width="300px"}
 <details>
 <summary>
 csv
@@ -44,7 +44,7 @@ id,component,fill,stroke,shape,refs
 
 
 ## [Supply chain tracking example](https://github.com/jgraph/drawio-diagrams/blob/master/examples/csv/car-partial-supply-chain.txt)
-![](/assets/files/FRl8Bv-QP_1_drawio-csv-example-supply-chain-tracking.svg)
+![](/assets/img/FRl8Bv-QP_drawio-csv-example-supply-chain-tracking.svg)
 <details>
 <summary>
 csv
@@ -126,7 +126,7 @@ a5,Assembly 5,16,assembly
 
 
 ## [Labels](https://github.com/jgraph/drawio-diagrams/blob/master/examples/csv/labels.txt)
-![](/assets/files/FRl8Bv-QP_2_drawio-csv-examples-labels.svg)
+![](/assets/img/FRl8Bv-QP_drawio-csv-examples-labels.svg)
 <details>
 <summary>
 csv
@@ -173,7 +173,7 @@ id,name,position,email,url,refs, labeltype
 
 ## [Gitflow](https://github.com/jgraph/drawio-diagrams/blob/master/examples/csv/gitflow.txt)
 
-![](/assets/files/FRl8Bv-QP_3_drawio-csv-examples-gitflow.svg)
+![](/assets/img/FRl8Bv-QP_drawio-csv-examples-gitflow.svg)
 <details>
 <summary>
 csv
@@ -248,7 +248,7 @@ entry,version,branch,feature,branched
 
 ## [Network Topology](https://github.com/jgraph/drawio-diagrams/blob/master/examples/csv/network-topology.txt)
 
-![](/assets/files/FRl8Bv-QP_4_drawio-csv-examples-network-topology.svg)
+![](/assets/img/FRl8Bv-QP_drawio-csv-examples-network-topology.svg)
 
 <details>
 <summary>
@@ -292,7 +292,7 @@ entry,zone,type,host,connected
 
 ## [Habit Tracker UML](https://github.com/jgraph/drawio-diagrams/blob/master/examples/csv/habit-tracker-app-use-case.txt)
 
-![](/assets/files/FRl8Bv-QP_5_drawio-csv-examples-habit-tracker-uml.svg =400x)
+![](/assets/img/FRl8Bv-QP_drawio-csv-examples-habit-tracker-uml.svg){:width="400px"}
 <details>
 <summary>
 csv
@@ -336,7 +336,7 @@ id,action,fill,stroke,shape,includes,extends,refs
 
 ## [Edges](https://github.com/jgraph/drawio-diagrams/blob/master/examples/csv/edges.txt)
 
-![](/assets/files/FRl8Bv-QP_6_drawio-csv-examples-edges.svg)
+![](/assets/img/FRl8Bv-QP_drawio-csv-examples-edges.svg)
 
 <details>
 <summary>
@@ -387,7 +387,7 @@ id,name,relation1,relation2,relation3,relation4,refs
 
 ## [Org Chart](https://drawio-app.com/import-from-csv-to-drawio/)
 
-![](/assets/files/FRl8Bv-QP_7_drawio-csv-examples-org-chart-2.svg =300x)
+![](/assets/img/FRl8Bv-QP_drawio-csv-examples-org-chart-2.svg){:width="300px"}
 <details>
 <summary>
 csv
