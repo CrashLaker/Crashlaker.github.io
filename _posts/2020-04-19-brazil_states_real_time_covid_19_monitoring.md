@@ -16,6 +16,6 @@ tags:  [d3js, dashboard, realtime, monitoring]
 
 ![](/assets/img/VUXUUEGz-_b71b771767cc6f629007538485f5eb24.png)
 
-![](/assets/files/VUXUUEGz-_0_covid-thumb.gif)
+![](/assets/img/VUXUUEGz-_covid-thumb.gif)
 
-![](/assets/files/VUXUUEGz-_1_covid-full.gif)
+![](/assets/img/VUXUUEGz-_covid-full.gif)

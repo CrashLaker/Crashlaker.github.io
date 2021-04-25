@@ -9,7 +9,7 @@ date: "2021-01-24 16:48:14.652000+00:00"
 
 https://bernatgel.github.io/karyoploter_tutorial/Tutorial/PlotHorizon/PlotHorizon.html
 
-![](/assets/files/Sf8kW-XxU_0_horizon.animation.optimized.gif)
+![](/assets/img/Sf8kW-XxU_horizon.animation.optimized.gif)
 
 # Code
 

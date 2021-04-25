@@ -275,5 +275,39 @@ http://localhost:8085/connectors/ -d '{
 ```
 
 
+# Debezium UI
+
+dummy db
+https://www.postgresqltutorial.com/postgresql-sample-database/
+
+```sql
+docker rm -f pg
+docker run -dit \
+	--name pg \
+	-e POSTGRES_PASSWORD=admin \
+	-p 5432:5432 \
+	-v /root/data:/data \
+	postgres:10.16 postgres -c wal_level=logical
+	
+docker exec -it pg bash -c "psql -U postgres -c 'create database dvdrental'"
+	
+
+cmd="pg_restore -U postgres -d dvdrental /data/dvdrental.tar"
+docker exec -it pg bash -c "$cmd"
+```
+
+![](/assets/img/AIkqFmIcL_21f3bc9f4d510e1c9ab86df26d5592fd.png)
+
+![](/assets/img/AIkqFmIcL_1050f874ce0eb7354cc100a2734b7f84.png)
+
+![](/assets/img/AIkqFmIcL_e2b3239546c1fbf881cd4bce54cf4c8d.png)
+
+![](/assets/img/AIkqFmIcL_3b1bf043c1e547cab91bbce8b23159a5.png)
+
+
+
+
+
+
 
 
