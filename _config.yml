@@ -46,6 +46,8 @@ urls:
       url: https://crashlaker.github.io/me/2020/09/02/my_setups.html
     - text: Tags
       url: /tags
+    - text: Posts
+      url: /posts
     #- text: XML Feed
     #  url: /feed.xml
 
