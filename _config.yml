@@ -44,10 +44,10 @@ urls:
       url: /projects/
     - text: My Setup
       url: https://crashlaker.github.io/me/2020/09/02/my_setups.html
+    - text: All Posts
+      url: /posts
     - text: Tags
       url: /tags
-    - text: Posts
-      url: /posts
     #- text: XML Feed
     #  url: /feed.xml
 
