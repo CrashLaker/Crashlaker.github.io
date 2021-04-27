@@ -84,4 +84,4 @@ def main():
     return template
 ```
 
-![](/assets/files/wKX6SNMyy_0_flowcharting-hexbin2.gif)
+![](/assets/img/wKX6SNMyy_flowcharting-hexbin2.gif)

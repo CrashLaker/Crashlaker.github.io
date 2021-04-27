@@ -113,7 +113,8 @@ https://medium.com/@o20021106/how-to-connect-to-remote-hive-cluster-with-pyspark
 wget /assets/files/0-35ynhUx_0_hive-site-1.xml -O /opt/spark/conf/hive-site.xml
 wget /assets/files/0-35ynhUx_1_core-site.xml -O /opt/spark/conf/core-site.xml
 wget /assets/files/0-35ynhUx_2_hdfs-site.xml -O /opt/spark/conf/hdfs-site.xml
-wget http://192.168.31.78///datag/all//hive-jdbc-standalone.jar -O /opt/spark/jars/hive-jdbc-standalone.jar
+wget http://coreto1:8081/download/codimd/71f4d5e87b4c4adfa32a0de1b11f5787.jar/hive-jdbc-standalone.jar
+ -O /opt/spark/jars/hive-jdbc-standalone.jar
 ```
 
 ## PySpark

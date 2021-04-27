@@ -59,7 +59,7 @@ Para o SVG panel é preciso primeiro encontrar o mapa do Brasil em formato SVG. 
 
 ![](/assets/img/K6VI7qsEm_32fdf9205ea40b5ad9c2114e2e70d474.png)
 
-A versão que estou utilizando pode ser encontrada [aqui](/assets/files/K6VI7qsEm_0_brasil-svg-panel.svg).
+A versão que estou utilizando pode ser encontrada [aqui](http://core1:8081/download/codimd/8a47f69dfc3346c0b708e7a54aa5129f.svg/brasil-svg-panel.svg).
 
 Em seguida podemos utilizar o seguinte código em javascript para configurar a transição de cores.
 
@@ -104,7 +104,7 @@ Nele montamos o diagrama do layout desejado e exportamos em XML.
 
 ![](/assets/img/K6VI7qsEm_1604e7426a4ffcd28885421fd3b8be2f.png)
 
-O arquivo utilizado acima pode ser encontrado [aqui](/assets/files/K6VI7qsEm_1_brazil_drawio_fmt.xml).
+O arquivo utilizado acima pode ser encontrado [aqui](http://core1:8081/download/codimd/9ecbc98b17e64af08f9aad42d08b2526.xml/brazil_drawio_fmt.xml).
 
 ![](/assets/img/K6VI7qsEm_aed3bb593241adef122f2b7a509472ec.png)
 
@@ -135,11 +135,11 @@ Faça isso para cada estado e no final terá algo do tipo.
 
 Transições de cores a cada atualização também funciona.
 
-![](/assets/files/K6VI7qsEm_2_flowcharting-brasil-transition.gif)
+![](/assets/img/K6VI7qsEm_flowcharting-brasil-transition.gif)
 
-![](/assets/files/K6VI7qsEm_3_svg-panel-brasil-transition.gif)
+![](/assets/img/K6VI7qsEm_svg-panel-brasil-transition.gif)
 
-![](/assets/files/K6VI7qsEm_4_map-2update-brazil-flowcharting.gif)
+![](/assets/img/K6VI7qsEm_map-2update-brazil-flowcharting.gif)
 
 # Conclusão
 As formas de configuracão de tecnologias dos 3 plugins são muito diferentes um do outro.
@@ -157,7 +157,7 @@ Link para mapa2:
 https://grafana.com/grafana/dashboards/12092
 
 Appendix:  
-[Mapa Brasil v2](/assets/files/K6VI7qsEm_5_brazil-map-only.xml)  
-[Mapa Brasil v2 + Painel](/assets/files/K6VI7qsEm_6_map-brazil-scaleok-panel.xml)  
+[Mapa Brasil v2](http://core1:8081/download/codimd/62af1564edd04b71af1e42549083847c.xml/brazil-map-only.xml)  
+[Mapa Brasil v2 + Painel](http://core1:8081/download/codimd/02b49057aec146cf972a3b079f515ee9.xml/map-brazil-scaleok-panel.xml)  
 
 Obrigado!

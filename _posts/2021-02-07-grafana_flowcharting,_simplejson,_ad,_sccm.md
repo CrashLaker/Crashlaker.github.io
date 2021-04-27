@@ -11,7 +11,7 @@ tags:  [flowcharting, simplejson, ad, sccm]
 
 
 
-![](/assets/files/N0mhb9ZnD_0_myad-local-demo0.gif)
+![](/assets/img/N0mhb9ZnD_myad-local-demo0.gif)
 
 Flowcharting CSV
 Discrete

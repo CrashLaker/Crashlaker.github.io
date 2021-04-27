@@ -11,7 +11,7 @@ date: "2019-04-21"
 
 [Originally posted on Medium](https://medium.com/@crashlaker/practicing-around-d3-js-over-appdynamics-2975a66bc364)
 
-![](/assets/files/0ouLRKi1Z_0_1_qmGfx0pqmDLrWfXkHFsmfg.gif)
+![](/assets/img/0ouLRKi1Z_1_qmGfx0pqmDLrWfXkHFsmfg.gif)
 *GIF extracted from https://www.youtube.com/watch?v=nXXyWLft1zc*
 
 > Disclaimer: Some contents written were based solely from my experience uppon using the Appdynamics dashboard. So suggestions and a more in-depth overview about appdynamic’s products are much appreciated.

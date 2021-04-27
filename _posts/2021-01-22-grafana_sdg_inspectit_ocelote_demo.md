@@ -16,7 +16,7 @@ Access grafana `http://<ip>:3001`
 Login: admin
 Password: demo
 
-![](/assets/files/q_17rqFFU_0_inspectit-ocelote-demo-sdg.gif)
+![](/assets/img/q_17rqFFU_inspectit-ocelote-demo-sdg.gif)
 
 
 # Refs
