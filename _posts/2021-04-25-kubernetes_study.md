@@ -8,6 +8,14 @@ date: "2021-04-25 22:19:29.465000+00:00"
 
 * https://www.udemy.com/course/learn-kubernetes/
 * https://www.udemy.com/course/certified-kubernetes-administrator-with-practice-tests/
+	* Certified Kubernetes Administrator:
+		*  https://www.cncf.io/certification/cka/
+	* Exam Curriculum (Topics):
+		*  https://github.com/cncf/curriculum
+	* Candidate Handbook:
+		*  https://www.cncf.io/certification/candidate-handbook
+	* Exam Tips:
+		*  http://training.linuxfoundation.org/go//Important-Tips-CKA-CKAD
 * Useful:
     * https://medium.com/dev-genius/kubernetes-for-local-development-a6ac19f1d1b2
         * docker desktop
@@ -33,7 +41,29 @@ date: "2021-04-25 22:19:29.465000+00:00"
 ![](/assets/img/bJWy8Q6s6_eaa69d1847ac0fe5725dfa104fac73b5.png)
 
 
+# Certified Kubernetes Administrator (CKA) with Practice Tests
 
+![](/assets/img/bJWy8Q6s6_8beeff5f5d825ac01364c808652bf62e.png)
+
+* Master
+	* ETCD Cluster
+	* kube-apiserver
+	* Kube Controller Manager
+		* Node Controller
+			* Node Monitor Period = 5s
+			* Node Monitor Grace Period = 40s
+			* POD Eviction Timeout = 5m
+		* Replication Controller
+	* kube-scheduler
+* Worker
+	* kubelet
+	* kube-proxy
+	* Container runtime:
+		* rkt
+		* docker
+		* cri-o
+		
+![](/assets/img/bJWy8Q6s6_9fbe2648112b7a62985dcca9d34967ae.png)
 
 
 
@@ -45,6 +75,8 @@ Install kubectl
 
 ```bash
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+mv kubectl /usr/bin/
 ```
 
 https://kind.sigs.k8s.io/docs/user/quick-start/
@@ -117,11 +149,64 @@ kind-worker3         Ready    <none>                 2m17s   v1.20.2
 ```
 
 
+# Minikube
+
+https://minikube.sigs.k8s.io/docs/start/
+
+```bash
+yum -y install http://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
+yum -y install conntrack-tools
+minikube start --driver=none
+```
+
+## Install qemu kvm
+https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/
+
+```bash
+yum install -y qemu-kvm libvirt libvirt-python libguestfs-tools virt-install
+systemctl enable libvirtd
+systemctl start libvirtd
+```
+
+https://minikube.sigs.k8s.io/docs/drivers/kvm2/
 
 
+`virt-host-validate`
 
+```bash
+minikube start --driver=kvm2 --force
+```
 
+```bash
+minikube node add --worker
+```
 
+```
+kubectl get nodes
+NAME           STATUS   ROLES                  AGE     VERSION
+minikube       Ready    control-plane,master   8m46s   v1.20.2
+minikube-m02   Ready    <none>                 6m34s   v1.20.2
+minikube-m03   Ready    <none>                 18s     v1.20.2
+```
+
+```
+minikube node list
+minikube        192.168.39.142
+minikube-m02    192.168.39.228
+minikube-m03    192.168.39.165
+```
+
+```bash
+# kubectl run nginx --image=nginx
+pod/nginx created
+# kubectl get pods
+NAME    READY   STATUS    RESTARTS   AGE
+nginx   1/1     Running   0          25s
+# kubectl describe pod nginx
+# kubectl get pods -o wide
+NAME    READY   STATUS    RESTARTS   AGE     IP           NODE           NOMINATED NODE   READINESS GATES
+nginx   1/1     Running   0          2m11s   172.17.0.2   minikube-m03   <none>           <none>
+```
 
 
 
