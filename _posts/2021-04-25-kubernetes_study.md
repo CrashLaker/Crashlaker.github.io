@@ -55,6 +55,7 @@ date: "2021-04-25 22:19:29.465000+00:00"
 			* POD Eviction Timeout = 5m
 		* Replication Controller
 	* kube-scheduler
+		* Decides which pod goes on which node.
 * Worker
 	* kubelet
 	* kube-proxy
@@ -65,6 +66,14 @@ date: "2021-04-25 22:19:29.465000+00:00"
 		
 ![](/assets/img/bJWy8Q6s6_9fbe2648112b7a62985dcca9d34967ae.png)
 
+## Kube scheduler
+![](/assets/img/bJWy8Q6s6_c05c55744b21366aea3b59f86c48106e.png)
+
+![](/assets/img/bJWy8Q6s6_2b22b8d691a020012c5dd6360e79b600.png)
+
+calculates the amount of resources that will be free after the pod is allocated
+
+![](/assets/img/bJWy8Q6s6_bfe63aba0841bc8feb18f58667d3fe41.png)
 
 
 # Install Kind
