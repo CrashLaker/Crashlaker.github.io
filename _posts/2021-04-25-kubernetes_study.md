@@ -75,6 +75,57 @@ calculates the amount of resources that will be free after the pod is allocated
 
 ![](/assets/img/bJWy8Q6s6_bfe63aba0841bc8feb18f58667d3fe41.png)
 
+# Cheat Sheet
+
+Create Nginx Pod
+```bash
+kubectl run nginx --image=nginx
+```
+
+Generate POD Manifest YAML file (-o yaml). Don't create it (--dry-run)
+```bash
+kubectl run nginx --image=nginx --dry-run=client -o yaml
+```
+
+Generate Deployment YAML file (-o yaml). Don't create it(--dry-run) with 4 Replicas (--replicas=4)
+
+```bash
+kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-deployment.yaml
+```
+
+* `kubectl get pods --namespace=dev`
+* `kubectl get pods`
+* `kubectl config set-context $(kubectl config current-context) --namespace=dev`
+* `kubectl get pods --all-namespaces`
+
+* Commands
+	* `kubectl run nginx --image=nginx`
+	* `kubectl run nginx --image=nginx  --dry-run=client -o yaml`
+	* `kubectl run custom-nginx --image=nginx --port=8080`
+	* `kubectl run httpd --image=httpd:alpine --port=80 --expose`
+	* `kubectl create deployment --image=nginx nginx`
+	* `kubectl create deployment --image=nginx nginx --dry-run -o yaml`
+	* `kubectl create deployment nginx --image=nginx --replicas=4`
+	* `kubectl scale deployment nginx --replicas=4`
+	* `kubectl create deployment nginx --image=nginx--dry-run=client -o yaml > nginx-deployment.yaml`
+	* `kubectl expose pod redis --port=6379 --name redis-service --dry-run=client -o yaml`
+	* `kubectl create service clusterip redis --tcp=6379:6379 --dry-run=client -o yaml`
+	* `kubectl expose pod nginx --port=80 --name nginx-service --type=NodePort --dry-run=client -o yaml`
+	* `kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run=client -o yaml`
+* Imperative
+	* Create Objects
+		* kubectl run --image=nginx nginx
+		* kubectl create deployment --image=nginx nginx
+		* kubectl expose deployment nginx --port 80
+	* Update Objects 
+		* kubectl edit deployment nginx
+		* kubectl scale deployment nginx --replicas=5
+		* kubectl set image deployment nginx nginx=nginx:1.18
+* Useful
+	* https://kubernetes.io/docs/reference/kubectl/conventions/	
+
+
+
 
 # Install Kind
 
