@@ -112,6 +112,16 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 	* `kubectl create service clusterip redis --tcp=6379:6379 --dry-run=client -o yaml`
 	* `kubectl expose pod nginx --port=80 --name nginx-service --type=NodePort --dry-run=client -o yaml`
 	* `kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run=client -o yaml`
+	* Namespace
+		* `kubectl -n <namespace>`
+		* `kubectl config set-context --current --namespace default`
+	* Taints
+		* `kubectl describe node kubemaster | grep Taint`
+		* `kubectl taint nodes node01 spray=mortein:NoSchedule`
+		* `kubectl taint nodes master/controlplane node-role.kubernetes.io/master:NoSchedule-`
+	* Label Nodes
+		* `kubectl label nodes <node-name> <label-key>=<label-value>`
+		* `kubectl label nodes node-1 size=Large`
 * Imperative
 	* Create Objects
 		* kubectl run --image=nginx nginx
