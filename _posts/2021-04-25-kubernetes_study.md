@@ -98,6 +98,11 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 * `kubectl config set-context $(kubectl config current-context) --namespace=dev`
 * `kubectl get pods --all-namespaces`
 
+* General
+	* Enroll for exam
+		* https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/
+			* [Candidate Handbook](https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook)
+			* 
 * Commands
 	* `kubectl run nginx --image=nginx`
 	* `kubectl run nginx --image=nginx  --dry-run=client -o yaml`
@@ -131,8 +136,44 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 		* kubectl edit deployment nginx
 		* kubectl scale deployment nginx --replicas=5
 		* kubectl set image deployment nginx nginx=nginx:1.18
+	* Deployments
+		* `kubectl edit deployment <my deployment>`
+* YAML
+	* Resource Requirements
+		* https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource
+			*  mem https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/memory-default-namespace/
+				*  ```
+					apiVersion: v1
+					kind: LimitRange
+					metadata:
+					  name: mem-limit-range
+					spec:
+					  limits:
+					  - default:
+						  memory: 512Mi
+						defaultRequest:
+						  memory: 256Mi
+						type: Container
+					```
+			* cpu https://kubernetes.io/docs/tasks/administer-cluster/manage-resources/cpu-default-namespace/
+				* ```
+					apiVersion: v1
+					kind: LimitRange
+					metadata:
+					  name: cpu-limit-range
+					spec:
+					  limits:
+					  - default:
+						  cpu: 1
+						defaultRequest:
+						  cpu: 0.5
+						type: Container
+					```
 * Useful
 	* https://kubernetes.io/docs/reference/kubectl/conventions/	
+	* https://twitter.com/Sh1bumi/status/1388973503400103939
+		* ![](/assets/img/bJWy8Q6s6_7e695f532d4d6802a8d05dc119393097.png)
+
 
 
 
