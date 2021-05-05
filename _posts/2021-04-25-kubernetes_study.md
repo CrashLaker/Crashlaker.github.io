@@ -102,21 +102,47 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 	* Enroll for exam
 		* https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/
 			* [Candidate Handbook](https://docs.linuxfoundation.org/tc-docs/certification/lf-candidate-handbook)
-			* 
+* Articles
+	* https://www.contino.io/insights/the-ultimate-guide-to-passing-the-cka-exam
+		* Books
+			* Kubernetes in Action by Marko Luksa
+			* Kubernetes Up and Running by Kelsey Hightower, Brendan Burns, Joe Beda
+			* DevOps with Kubernetes by Hideto Saito, Hui-Chuan Chloe Lee, Cheng-Yang Wu
+			* The Kubernetes Book by Nigel Poulton
+		* Tools
+			* tmux, vi, systemd, kubectl, cfssl/openssl
+		* Alias
+			* ```
+				alias kc='kubectl'
+				alias kgp='kubectl get pods'
+				alias kgs='kubectl get svc'
+				alias kgc='kubectl get componentstatuses’
+				alias kctx='kubectl config current-context’
+				alias kcon='kubectl config use-context’
+				alias kgc='kubectl config get-context'
+				```
+	* https://blog.autsoft.hu/certified-kubernetes-administrator/
+	* https://capgemini.github.io/kubernetes/Zero-to-CKA-in-2-Weeks/
+	* 
 * Commands
-	* `kubectl run nginx --image=nginx`
-	* `kubectl run nginx --image=nginx  --dry-run=client -o yaml`
-	* `kubectl run custom-nginx --image=nginx --port=8080`
-	* `kubectl run httpd --image=httpd:alpine --port=80 --expose`
-	* `kubectl create deployment --image=nginx nginx`
-	* `kubectl create deployment --image=nginx nginx --dry-run -o yaml`
-	* `kubectl create deployment nginx --image=nginx --replicas=4`
-	* `kubectl scale deployment nginx --replicas=4`
-	* `kubectl create deployment nginx --image=nginx--dry-run=client -o yaml > nginx-deployment.yaml`
-	* `kubectl expose pod redis --port=6379 --name redis-service --dry-run=client -o yaml`
-	* `kubectl create service clusterip redis --tcp=6379:6379 --dry-run=client -o yaml`
-	* `kubectl expose pod nginx --port=80 --name nginx-service --type=NodePort --dry-run=client -o yaml`
-	* `kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run=client -o yaml`
+	* POD
+		* `kubectl run --restart=Never --image=busybox static-busybox --dry-run=client -o yaml --command -- sleep 1000 > /etc/kubernetes/manifests/static-busybox.yaml`
+		* `kubectl get pod --namespace=kube-system`
+		* `kubectl run nginx --image=nginx`
+		* `kubectl run nginx --image=nginx  --dry-run=client -o yaml`
+		* `kubectl run custom-nginx --image=nginx --port=8080`
+		* `kubectl run httpd --image=httpd:alpine --port=80 --expose`
+	* Deployment
+		* `kubectl create deployment --image=nginx nginx`
+		* `kubectl create deployment --image=nginx nginx --dry-run -o yaml`
+		* `kubectl create deployment nginx --image=nginx --replicas=4`
+		* `kubectl scale deployment nginx --replicas=4`
+		* `kubectl create deployment nginx --image=nginx--dry-run=client -o yaml > nginx-deployment.yaml`
+	* Service
+		* `kubectl expose pod redis --port=6379 --name redis-service --dry-run=client -o yaml`
+		* `kubectl create service clusterip redis --tcp=6379:6379 --dry-run=client -o yaml`
+		* `kubectl expose pod nginx --port=80 --name nginx-service --type=NodePort --dry-run=client -o yaml`
+		* `kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run=client -o yaml`
 	* Namespace
 		* `kubectl -n <namespace>`
 		* `kubectl config set-context --current --namespace default`
@@ -127,6 +153,10 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 	* Label Nodes
 		* `kubectl label nodes <node-name> <label-key>=<label-value>`
 		* `kubectl label nodes node-1 size=Large`
+	* Events
+		* `kubectl get events`
+	* Logs
+		* `kubectl logs <podname> --namespace=<namespace>`
 * Imperative
 	* Create Objects
 		* kubectl run --image=nginx nginx
