@@ -41,7 +41,7 @@ date: "2021-04-25 22:19:29.465000+00:00"
 ![](/assets/img/bJWy8Q6s6_eaa69d1847ac0fe5725dfa104fac73b5.png)
 
 
-# Certified Kubernetes Administrator (CKA) with Practice Tests
+## Certified Kubernetes Administrator (CKA) with Practice Tests
 
 ![](/assets/img/bJWy8Q6s6_8beeff5f5d825ac01364c808652bf62e.png)
 
@@ -66,7 +66,7 @@ date: "2021-04-25 22:19:29.465000+00:00"
 		
 ![](/assets/img/bJWy8Q6s6_9fbe2648112b7a62985dcca9d34967ae.png)
 
-## Kube scheduler
+### Kube scheduler
 ![](/assets/img/bJWy8Q6s6_c05c55744b21366aea3b59f86c48106e.png)
 
 ![](/assets/img/bJWy8Q6s6_2b22b8d691a020012c5dd6360e79b600.png)
@@ -74,6 +74,17 @@ date: "2021-04-25 22:19:29.465000+00:00"
 calculates the amount of resources that will be free after the pod is allocated
 
 ![](/assets/img/bJWy8Q6s6_bfe63aba0841bc8feb18f58667d3fe41.png)
+
+### Storage
+
+![](/assets/img/bJWy8Q6s6_1093a3ee853bd74a6203fedf2fea2b22.png)
+
+![](/assets/img/bJWy8Q6s6_275af5bf07f8673e61afec6052a7729f.png)
+
+
+![](/assets/img/bJWy8Q6s6_880542224148a383a845cd380befd199.png)
+
+![](/assets/img/bJWy8Q6s6_b074fa392b69b5b91394357eddb5623b.png)
 
 # Cheat Sheet
 
@@ -121,9 +132,8 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 				alias kcon='kubectl config use-context’
 				alias kgc='kubectl config get-context'
 				```
-	* https://blog.autsoft.hu/certified-kubernetes-administrator/
-	* https://capgemini.github.io/kubernetes/Zero-to-CKA-in-2-Weeks/
-	* 
+* Learn
+	* https://play.instruqt.com/public	
 * Commands
 	* POD
 		* `kubectl run --restart=Never --image=busybox static-busybox --dry-run=client -o yaml --command -- sleep 1000 > /etc/kubernetes/manifests/static-busybox.yaml`
@@ -144,6 +154,7 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 		* `kubectl expose pod nginx --port=80 --name nginx-service --type=NodePort --dry-run=client -o yaml`
 		* `kubectl create service nodeport nginx --tcp=80:80 --node-port=30080 --dry-run=client -o yaml`
 	* Namespace
+		* `kubectl create namespace mysql`
 		* `kubectl -n <namespace>`
 		* `kubectl config set-context --current --namespace default`
 	* Taints
@@ -157,6 +168,9 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 		* `kubectl get events`
 	* Logs
 		* `kubectl logs <podname> --namespace=<namespace>`
+		* `kubectl logs -f <podname> <containername> --namespace=<namespace>`
+	* Secrets
+		* `kubectl get secret --namespace mysql mysql -o jsonpath="{.data.mysql-root-password}" | base64 --decode`
 * Imperative
 	* Create Objects
 		* kubectl run --image=nginx nginx
@@ -203,6 +217,7 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 	* https://kubernetes.io/docs/reference/kubectl/conventions/	
 	* https://twitter.com/Sh1bumi/status/1388973503400103939
 		* ![](/assets/img/bJWy8Q6s6_7e695f532d4d6802a8d05dc119393097.png)
+
 
 
 

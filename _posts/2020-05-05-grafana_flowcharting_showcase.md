@@ -31,3 +31,12 @@ tags:  [grafana, plugin, flowcharting]
 ![](/assets/img/IoCcpSAGs_flowcharting-idashboard-working.gif)
 
 ![](/assets/img/IoCcpSAGs_1_2aDXt67_pYrCnY7NlLt9_g.gif)
+
+![](/assets/img/IoCcpSAGs_flowgraph-demo1-720.gif)
+
+![](/assets/img/IoCcpSAGs_aeca1b9833be3533a681ccaada60aab6.png)
+
+![](/assets/img/IoCcpSAGs_31eb973119b2fab58f8132e3efa2e350.png)
+
+
+
