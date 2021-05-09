@@ -5,6 +5,8 @@ comments: true
 date: "2021-05-02 15:10:58.786000+00:00"
 ---
 
+![](/assets/img/JagepzLvy_c81e4a2e5aea1dffbaf60e06826f03d8.png)
+
 
 source code:
 https://github.com/Novik/ruTorrent/blob/44d43229f07212f20b53b6301fb25882125876c3/plugins/httprpc/action.php#L94
