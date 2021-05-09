@@ -300,6 +300,26 @@
         "size": "cover"
 	},
 	{
+		"slug": "grafana-sdg-dependency-graph",
+		"name": "Grafana SDG Dependency Graph",
+		"image": "https://crashlaker.github.io/assets/img/5x2wE23Rx_sdg-demo0-720.gif",
+		"url": "https://crashlaker.github.io/2021/05/07/grafana_sdg_showcase.html",
+		"date": "May 2021",
+		"tags": ["Grafana"],
+        "position": "center",
+        "size": "cover"
+	},
+	{
+		"slug": "grafana-rtorrent",
+		"name": "Grafana RTorrent Dashboard",
+		"image": "https://crashlaker.github.io/assets/img/JagepzLvy_c81e4a2e5aea1dffbaf60e06826f03d8.png",
+		"url": "https://crashlaker.github.io/2021/05/02/rtorrent_xmlrpc_python.html",
+		"date": "May 2021",
+		"tags": ["Grafana"],
+        "position": "center",
+        "size": "cover"
+	},
+	{
 		"slug": "horizon-demo",
 		"name": "Horizon Demo",
 		"image": "https://crashlaker.github.io/assets/img/IDYVH0Y3Q_5e4c124ea776fc67eb5e4d8dc1af054a.png",
