@@ -132,6 +132,10 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 				alias kcon='kubectl config use-context’
 				alias kgc='kubectl config get-context'
 				```
+    * https://www.axelerant.com/resources/team-blog/how-become-certified-kubernetes-administrator
+        * Aliases: 
+            * `alias k='kubectl'`
+            * `alias kg='kubectl get'`
 * Learn
 	* https://play.instruqt.com/public	
 * Commands
