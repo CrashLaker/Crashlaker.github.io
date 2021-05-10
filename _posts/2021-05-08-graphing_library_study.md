@@ -5,6 +5,15 @@ comments: true
 date: "2021-05-08 04:59:43.179000+00:00"
 ---
 
+* https://github.com/dagrejs/dagre
+* https://crashlaker.github.io/2021/05/02/rtorrent_xmlrpc_python.html
+    * nomnoml
+        * ![](/assets/img/BbF0Q-p61_47d7499684c6b8ea3350f9c83896ad1f.png)
+    * gleek
+* https://modeling-languages.com/javascript-drawing-libraries-diagrams/
+    * 
+
+
 # Study
 
 ## https://blog.js.cytoscape.org/2020/05/11/layouts/
