@@ -320,6 +320,16 @@
         "size": "cover"
 	},
 	{
+		"slug": "grafana-udemy-courses",
+		"name": "Grafana Udemy Courses Progress Dashboard",
+		"image": "https://crashlaker.github.io/assets/img/dJYKcTp-0_261e76be1ed2581e6e5a1b9df1664894.png",
+		"url": "https://crashlaker.github.io/2021/05/10/udemy_courses_progress_grafana.html",
+		"date": "May 2021",
+		"tags": ["Grafana"],
+        "position": "center",
+        "size": "cover"
+	},
+	{
 		"slug": "horizon-demo",
 		"name": "Horizon Demo",
 		"image": "https://crashlaker.github.io/assets/img/IDYVH0Y3Q_5e4c124ea776fc67eb5e4d8dc1af054a.png",
