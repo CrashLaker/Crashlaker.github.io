@@ -136,6 +136,8 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
         * Aliases: 
             * `alias k='kubectl'`
             * `alias kg='kubectl get'`
+* Useful
+    * https://github.com/cloudogu/k8s-diagrams?utm_sq=ggoh6xujj8
 * Learn
 	* https://play.instruqt.com/public	
 * Commands

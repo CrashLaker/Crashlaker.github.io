@@ -35,3 +35,55 @@ tags:  [aws, data-analytics]
 
 
 ![](/assets/img/7iDIW0wRY_6bdee7f6fb241cf6740175c63d3f05d5.png)
+
+
+
+## AWS Certified Data Analytics Specialty 2021 - Hands On!
+
+https://udemy.com/course/aws-data-analytics/
+
+![](/assets/img/7iDIW0wRY_e78b5f7eb945a489f02207ceb85911db.png)
+
+
+![](/assets/img/7iDIW0wRY_fc5f0184c88ae17fd96510925f182a20.png)
+
+![](/assets/img/7iDIW0wRY_377709ffc44dfab88dd039fc1e772809.png)
+
+![](/assets/img/7iDIW0wRY_2eda8674672f96beedb8f2cb8319685a.png)
+
+![](/assets/img/7iDIW0wRY_00d03c234c57001720f6bdd75271e1cb.png)
+
+![](/assets/img/7iDIW0wRY_0a009a1f9539f316beb3e88942602780.png)
+
+![](/assets/img/7iDIW0wRY_8c5dffa20d26e6d31de5ad0cc52c8311.png)
+
+* AWS Kinesis Overview
+    * Kinesis is a managed alternative to Apache Kafka
+    * Great for application logs, metrics, IoT, clickstreams
+    * Great for "real-time" big data
+    * Great for streaming processing frameworks (spark, nifi)
+    * Data is automatically replicated synchronously do 3 AZ
+    * **Kinesis Streams**: low latency streaming ingest at scale
+    * **Kinesis Analytics**: perform real-time analytics on streams using SQL
+    * **Kinesis Firehose**: load streams into S3, Redshift, ElasticSearch & Splunk
+
+![](/assets/img/7iDIW0wRY_fc856cd1933ee02f8917b8e28d3fc0a2.png)
+
+![](/assets/img/7iDIW0wRY_2c34b68a613c6cafcb3d01c7d1527f12.png)
+
+![](/assets/img/7iDIW0wRY_7ef302d036cb53713b7d41635ae920c3.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
