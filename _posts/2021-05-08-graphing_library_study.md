@@ -6,12 +6,12 @@ date: "2021-05-08 04:59:43.179000+00:00"
 ---
 
 * https://github.com/dagrejs/dagre
-* https://crashlaker.github.io/2021/05/02/rtorrent_xmlrpc_python.html
+* lost url...
     * nomnoml
         * ![](/assets/img/BbF0Q-p61_47d7499684c6b8ea3350f9c83896ad1f.png)
     * gleek
 * https://modeling-languages.com/javascript-drawing-libraries-diagrams/
-    * 
+* https://dev.to/simonbrown/diagrams-as-code-2-0-82k
 
 
 # Study

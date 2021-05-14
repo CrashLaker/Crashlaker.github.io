@@ -129,3 +129,19 @@ pipeline_stages:
 
 ![](/assets/img/HhnzUy5g4_dc029b40074d01d06dd79b18d1a46307.png)
 
+
+
+
+
+{% raw %}
+<iframe id="myIframeIpynb0" style="border:none;" src="https://crashlaker.github.io/assets/posts_iframe/HhnzUy5g4-ipynb-0.html"></iframe>
+<script>
+setTimeout(() => {let myiframe = iFrameResize({ 
+                    log: false, 
+                    enablePublicMethods: true,
+                }, '#myIframeIpynb0'); }, 1000)
+</script>
+{% endraw %}
+    
+
+
