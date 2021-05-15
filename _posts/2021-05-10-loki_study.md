@@ -145,3 +145,40 @@ setTimeout(() => {let myiframe = iFrameResize({
     
 
 
+
+
+### Caveats
+
+#### Unknown error during query transaction. Please check JS console logs. #1164
+
+loki engine is timing out
+
+https://github.com/grafana/loki/issues/1164
+
+`grafana.ini`
+```
+[dataproxy]
+timeout = 600
+```
+
+`loki-config.yaml`
+```yaml
+server:
+  http_listen_port: 3100
+  grpc_listen_port: 9096
+  http_server_read_timeout: 10m
+  http_server_write_timeout: 10m
+  
+querier:
+  query_timeout: 10m
+  engine:
+    timeout: 10m
+```
+
+
+
+
+
+
+
+

@@ -85,6 +85,7 @@ https://udemy.com/course/aws-data-analytics/
 ![](/assets/img/7iDIW0wRY_88157d0acafc19aa3e6991e642daecb8.png)
 
 
+![](/assets/img/7iDIW0wRY_ae3ba018fe4f937e313e5b3724c94246.png)
 
 
 
