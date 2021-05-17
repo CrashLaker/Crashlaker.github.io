@@ -148,12 +148,18 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 		* `kubectl run nginx --image=nginx  --dry-run=client -o yaml`
 		* `kubectl run custom-nginx --image=nginx --port=8080`
 		* `kubectl run httpd --image=httpd:alpine --port=80 --expose`
+		* `kubectl -n elastic-stack exec -it app cat /log/app.log`
 	* Deployment
 		* `kubectl create deployment --image=nginx nginx`
 		* `kubectl create deployment --image=nginx nginx --dry-run -o yaml`
 		* `kubectl create deployment nginx --image=nginx --replicas=4`
 		* `kubectl scale deployment nginx --replicas=4`
 		* `kubectl create deployment nginx --image=nginx--dry-run=client -o yaml > nginx-deployment.yaml`
+	    * `kubectl edit deployment <name>`
+   * ConfigMaps
+        * `kubectl create configmap`
+            * `<config-name> --from-literal=<key>=<value>`
+        * `kubectl create configmap <config-name> --from-file=<path to file>`
 	* Service
 		* `kubectl expose pod redis --port=6379 --name redis-service --dry-run=client -o yaml`
 		* `kubectl create service clusterip redis --tcp=6379:6379 --dry-run=client -o yaml`
@@ -176,7 +182,14 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
 		* `kubectl logs <podname> --namespace=<namespace>`
 		* `kubectl logs -f <podname> <containername> --namespace=<namespace>`
 	* Secrets
+	    * `echo -n 'password' | base64`
+	    * `echo -n 'password' | base64 --decode`
+	    * `kubectl get secrets`
+	    * `kubectl describe secrets`
+	    * `kubectl get secret app-secret -o yaml`
 		* `kubectl get secret --namespace mysql mysql -o jsonpath="{.data.mysql-root-password}" | base64 --decode`
+		* `kubectl create secret generic app-secret --from-literal=DB_Host=mysql`
+		* `kubectl create secret generic app-secret --from-file=<filepath>`
 * Imperative
 	* Create Objects
 		* kubectl run --image=nginx nginx
