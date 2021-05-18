@@ -136,6 +136,18 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
         * Aliases: 
             * `alias k='kubectl'`
             * `alias kg='kubectl get'`
+    * https://www.reddit.com/r/kubernetes/comments/ndwgkr/the_story_of_3_attempts_at_cka_and_how_killersh/
+        * https://brownfield.dev/post/2021-05-13-series-cert-cka/
+            * 2 browser tabs, one for the exam and one for https://kubernetes.io/docs
+                * Get good with vim
+                * Use the docs for references
+                * Learn how to confirm since the test won't help you
+                * `kubectl`, `etcdtl`, `systemctl` are the important commands
+            * Killer.sh CKA Simulator
+                * https://killer.sh/cka
+    * My views on CKA
+        * https://www.reddit.com/r/kubernetes/comments/nejmo5/my_views_on_cka/
+            * 
 * Useful
     * https://github.com/cloudogu/k8s-diagrams?utm_sq=ggoh6xujj8
 * Learn
