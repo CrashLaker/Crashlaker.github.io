@@ -110,8 +110,13 @@ $(echo -e "\tsystemctl stop \$(svc)")
 status:
 $(echo -e "\tsystemctl status \$(svc)")
 
+enable:
+$(echo -e "\tsystemctl enable \$(svc)")
+
 edit:
 $(echo -e "\tvim /usr/lib/systemd/system/\$(svc).service")
+$(echo -e "\tsystemctl daemon-reload")
+
 
 
 EOF
