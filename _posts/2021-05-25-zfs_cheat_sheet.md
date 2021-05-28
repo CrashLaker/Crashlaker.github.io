@@ -31,6 +31,7 @@ gpart add -t freebsd-zfs da7
 gpart modify -i1 -l oricoA-labelY da7
 
 zpool create -f <poolname> raidz1 /dev/gpt/oricoA-*
+zfs set compression=lz4 <poolname>
 ```
 
 ## RAID6 & RAID 10
