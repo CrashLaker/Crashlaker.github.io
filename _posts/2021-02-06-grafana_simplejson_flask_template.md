@@ -10,6 +10,7 @@ date: "2021-02-06 15:47:42.281000+00:00"
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import dateutil.parser
+import datetime
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -28,8 +29,10 @@ def r_query():
 
     req = request.json
 
-    from_ms = dateutil.parser.parse(req["range"]["from"]).timestamp()*1000
-    to_ms = dateutil.parser.parse(req["range"]["to"]).timestamp()*1000
+    dfrom = dateutil.parser.parse(req["range"]["from"])
+    dto = dateutil.parser.parse(req["range"]["to"])
+    from_ms = dfrom.timestamp()*1000
+    to_ms = dto.timestamp()*1000
 
     response = [
         {

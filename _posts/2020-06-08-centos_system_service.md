@@ -118,7 +118,7 @@ $(echo -e "\tvim /usr/lib/systemd/system/\$(svc).service")
 $(echo -e "\tsystemctl daemon-reload")
 
 logs:
-$(echo -e "\tjournalctl -u \$(svc)")
+$(echo -e "\tjournalctl -u \$(svc) -f")
 
 
 
