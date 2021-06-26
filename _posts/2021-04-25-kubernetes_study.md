@@ -147,7 +147,15 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
                 * https://killer.sh/cka
     * My views on CKA
         * https://www.reddit.com/r/kubernetes/comments/nejmo5/my_views_on_cka/
-            * 
+    * https://apaarshrm39.medium.com/k8s-speed-run-how-i-aced-ck-ad-s-in-35-days-with-a-day-occasionally-night-job-fbf60d2ebe0c
+        * ```
+            alias k="kubectl"
+            alias kn="kubectl config set-context --current --namespace"
+            export y="--dry-run=client -o yaml"
+          ```
+        * **Make sure you are aware of these directories**: I came across an article which summarized all the important directories in a single place, give it a look: https://brandonwillmott.com/2020/10/01/important-directories-to-know-for-kubernetes-cka-exam/
+        * **Practice and Understand ETCD backup thoroughly**: I see people lost in this topic the most, practice it again and again, the backup as well as restore, don’t forget to mount the location of the restored backup on the etcd static pod. Refer this link: https://github.com/mmumshad/kubernetes-cka-practice-test-solution-etcd-backup-and-restore
+    * https://www.reddit.com/r/kubernetes/comments/nrs1ry/today_i_got_my_cka_here_are_some_tips/
 * Useful
     * https://github.com/cloudogu/k8s-diagrams?utm_sq=ggoh6xujj8
 * Learn
