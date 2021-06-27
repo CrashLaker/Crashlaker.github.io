@@ -22,6 +22,21 @@ date: "2021-04-25 22:19:29.465000+00:00"
         * minikube
         * kind
         * k3s
+    * https://computingforgeeks.com/kubectl-cheat-sheet-for-kubernetes-cka-exam-prep/
+        * start a temporary pod that dies on exit
+            * `kubectl run --rm -it --image=<image> <podname> -- sh`
+        * create namespace
+            * `kubectl create namespace <name>`
+            * `kubectl create ns <name>`
+        * starting session to the pod
+            * `kubectl exec --stdin --ty ubuntu -- sh`
+            * `kubectl exec --stdin --ty ubuntu -- /bin/bash`
+            * `kubectl exec --stdin --ty ubuntu -- ls -lt /etc/hosts`
+        * run pod
+            * `kubectl run nginx --image=nginx --restart=Never --dry-run=client -o yaml`
+            * `kubectl run nginx --image=nginx --restart=Never --limits='cpu=300m,memory=512Mi' --dry-run=client -o yaml`
+            * `kubectl run nginx --image=nginx --restart=Never --requests='cpu=100m,memory=256Mi' --limits='cpu=300m,memory=512Mi' --dry-run=client -o yaml`
+            * `kubectl run nginx --image=nginx --restart=Never --dry-run=client -o yaml >nginx-pod.yaml`
 
 
 ![](/assets/img/bJWy8Q6s6_c96dcc4bb7c447a17fb539de89fc9d6d.png)
