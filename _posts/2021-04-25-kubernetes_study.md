@@ -175,6 +175,42 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
     * https://github.com/cloudogu/k8s-diagrams?utm_sq=ggoh6xujj8
 * Learn
 	* https://play.instruqt.com/public	
+* Book
+    * Kubernetes: Preparing for the CKA and CKAD Certifications
+        * Curriculum CKA 1.19: Sep 2020
+            * **Cluster Architecture, Installation, and Configuration (25%)**
+                * [ ] Manage role-based access control (RBAC) - Authorization Chapter 11
+                * [ ] Use kubeadm to install a basic cluster - Chapter 1
+                * [ ] Manage a highly available Kubernetes cluster - Chapter 1
+                * [ ] Provision underlying infrastructure to deploy a Kubernetes cluster - Chapter 1
+                * [ ] Perform a version upgrade on a Kubernetes cluster using kubeadm - Chapter 15
+                * [ ] Implement etcd backup and restore - "Back Up a Cluster", "Restore a Cluster" Chapter 15
+            * [ ] **Workloads and Scheduling (15%)**
+                * [ ] Understand deployments and how to perform rolling update and rollbacks - "ReplicaSet Controller", "Deployment Controller", "Update and Rollback", and "Deployment Strategies", Chapter 5
+                * [ ] Use ConfigMaps and Secrets to configure applications - Chapter 6
+                * [ ] Know how to scale applications - Chapter 7
+                * [ ] Understand the primitives used to create robust, self-healing, application deployments - Chapter 8
+                * [ ] Understand how to resource limits can affect Pod scheduling - "Resource Requests" Chapter 9
+                * [ ] Awareness of manifest management and common templating tools - "Helm", "Kustomize", Chapter 16
+            * [ ] **Services and Networking (20%)**
+                * [ ] Understand host networking configuration on the cluster nodes - Chapter 1
+                * [ ] Understand connectivity between Pods - Chapter 1
+                * [ ] Understand ClusterIP, NodePort, and LoadBalancer service types and endpoints - Chapter 10
+                * [ ] Know how to use Ingress controllers and Ingress resources - Chapter 10
+                * [ ] Know how to configure and use CoreDNS - Chapter 1
+                * [ ] Choose an appropriate container network interface plugin - Chapter 1
+            * [ ] **Storage (10%)**
+                * [ ] Understand storage classes and persistent volumes - Chapter 12
+                * [ ] Understand mode, access modes, and reclaim policies for volumes - "Access Modes", "Claiming a Persistent Volume" Chapter 12
+                * [ ] Understand persistent volume claims primitive - "Claiming a Persistent Volume" Chapter 12
+                * [ ] Know how to configure applications with persistent storage - "Persistent Volume" Chapter 12
+            * [ ] **Troubleshooting (30%)**
+                * [ ] Evaluate cluster and node logging - Chapter 2
+                * [ ] Understand how to monitor applications - "Auto-scaling" Chapter 7; "kubectl" Chapter 16
+                * [ ] Manage container stdout and stderr logs - Logging in the Chapter 14
+                * [ ] Troubleshoot application failure - Basic logging, "kubectl", Chapter 16
+                * [ ] Troubleshoot cluster component failure - Chapter 2
+                * [ ] Troubleshoot networking - Chapter 2, Chapter 10, "kubectl", Chapter 16
 * Commands
 	* POD
 		* `kubectl run --restart=Never --image=busybox static-busybox --dry-run=client -o yaml --command -- sleep 1000 > /etc/kubernetes/manifests/static-busybox.yaml`
