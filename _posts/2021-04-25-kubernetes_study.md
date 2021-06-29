@@ -171,6 +171,37 @@ kubectl create deployment --image=nginx nginx --dry-run=client -o yaml > nginx-d
         * **Make sure you are aware of these directories**: I came across an article which summarized all the important directories in a single place, give it a look: https://brandonwillmott.com/2020/10/01/important-directories-to-know-for-kubernetes-cka-exam/
         * **Practice and Understand ETCD backup thoroughly**: I see people lost in this topic the most, practice it again and again, the backup as well as restore, don’t forget to mount the location of the restored backup on the etcd static pod. Refer this link: https://github.com/mmumshad/kubernetes-cka-practice-test-solution-etcd-backup-and-restore
     * https://www.reddit.com/r/kubernetes/comments/nrs1ry/today_i_got_my_cka_here_are_some_tips/
+    * https://medium.com/swlh/my-take-towards-cka-ckad-september-curriculum-update-tips-ff38e7585447
+        * **Cluster Maintenance(11%) + Installation, Configuration & Validation(12%) = Cluster Architecture, Installation & Configuration(25%)**
+            * Manage role-based access control (RBAC) [Using RBAC Authorization](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)
+            * Use Kubeadm to install a basic cluster [create cluster using kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/)
+            * Manage a highly-available Kubernetes cluster [highly available cluster](https://kubernetes.io/docs/tasks/administer-cluster/highly-available-master/)
+            * Provision underlying infrastructure to deploy a Kubernetes cluster
+            * Perform a version upgrade on a Kubernetes cluster using Kubeadm [Upgrading kubeadm clusters](https://kubernetes.io/docs/tasks/administer-cluster/kubeadm/kubeadm-upgrade/)
+            * Implement etcd backup and restore [ETCD backup and restore](https://kubernetes.io/docs/tasks/administer-cluster/configure-upgrade-etcd/)
+        * **Networking(11%) + Core Concepts(19%) = Services & Networking(20%)**
+            * Understand host networking configuration on the cluster nodes [Nodes](https://kubernetes.io/docs/concepts/architecture/nodes/), [Node communication](https://kubernetes.io/docs/concepts/architecture/control-plane-node-communication/)
+            * Understand connectivity between Pods [Pod to Pod Communication](https://kubernetes.io/docs/concepts/cluster-administration/networking/)
+            * Understand ClusterIP, NodePort, LoadBalancer service types and endpoints [Services](https://kubernetes.io/docs/concepts/services-networking/service/)
+            * Know how to use Ingress controllers and Ingress resources [Ingress controller](https://kubernetes.io/docs/concepts/services-networking/ingress-controllers/), [Ingress resource](https://kubernetes.io/docs/concepts/services-networking/ingress/)
+            * Know how to configure and use CoreDNS [CoreDNS](https://kubernetes.io/docs/tasks/administer-cluster/coredns/)
+            * Choose an appropriate container network interface plugin [network plugins](https://kubernetes.io/docs/concepts/extend-kubernetes/compute-storage-net/network-plugins/)
+        * **Logging/Monitoring(5%) + Troubleshooting 10% = Troubleshooting(30%)**
+            * Troubleshoot application failure: [Troubleshooting application](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-application/), [debug Pod failure](https://kubernetes.io/docs/tasks/debug-application-cluster/determine-reason-pod-failure/), [debug Init containers](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-init-containers/)
+            * Troubleshoot cluster component failure: [Troubleshoot clusters](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-cluster/), [troubleshoot kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/troubleshooting-kubeadm/)
+            * Troubleshoot networking: [debug DNS resolution](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/), [debug service](https://kubernetes.io/docs/tasks/debug-application-cluster/debug-service/)
+        * **Scheduling(5%) + Application Lifecycle Management(8%) = Workloads & Scheduling(15%)**
+            * Understand deployments and how to perform rolling update and rollbacks [Perform a Rollback on a DaemonSet](https://kubernetes.io/docs/tasks/manage-daemon/rollback-daemon-set/)
+            * Use ConfigMaps and Secrets to configure applications [Configure a Pod to Use a ConfigMap](https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/), [Distribute Credentials Securely Using Secrets](https://kubernetes.io/docs/tasks/inject-data-application/distribute-credentials-secure/)
+            * Know how to scale applications [Scaling your application](https://kubernetes.io/docs/concepts/cluster-administration/manage-deployment/#scaling-your-application), [Scale a StatefulSet](https://kubernetes.io/docs/tasks/run-application/scale-stateful-set/)
+            * Understand the primitives used to create robust, self-healing [Deploy an App](https://kubernetes.io/docs/tutorials/kubernetes-basics/deploy-app/)
+            * Understand how resource limits can affect Pod scheduling [Assign CPU Resources to Containers and Pods](https://kubernetes.io/docs/tasks/configure-pod-container/assign-cpu-resource/), [Assign Memory Resources to Containers and Pods](https://kubernetes.io/docs/tasks/configure-pod-container/assign-memory-resource/)
+            * Awareness of manifest management and common templating tools
+        * **Storage(7%) = Storage(10%)**
+            * Understand storage classes, persistent volumes [Storage Classes](https://kubernetes.io/docs/concepts/storage/storage-classes/), [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/), [Persistent Volume Claims](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims)
+            * Understand volume mode, access modes and reclaim policies for volumes [Volume Modes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#volume-mode), [Access Modes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes), [Update Reclaim Policy](https://kubernetes.io/docs/tasks/administer-cluster/change-pv-reclaim-policy/)
+            * Understand persistent volume claims primitive
+            * Know how to configure applications with persistent storage [Storage](https://kubernetes.io/docs/concepts/storage/), [Persistent Volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
 * Useful
     * https://github.com/cloudogu/k8s-diagrams?utm_sq=ggoh6xujj8
 * Learn
