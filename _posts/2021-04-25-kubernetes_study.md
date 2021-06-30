@@ -101,6 +101,31 @@ calculates the amount of resources that will be free after the pod is allocated
 
 ![](/assets/img/bJWy8Q6s6_b074fa392b69b5b91394357eddb5623b.png)
 
+### TLS
+
+![](/assets/img/bJWy8Q6s6_239e763db40ee2e5b36682f3c9c34c36.png)
+
+![](/assets/img/bJWy8Q6s6_7775877da5276b6d65a2ad9909a8bd08.png)
+
+![](/assets/img/bJWy8Q6s6_24fbbe12b247c55fba101d41bb0f0f01.png)
+
+![](/assets/img/bJWy8Q6s6_c55632dd15d485541236830f2717a7d7.png)
+
+
+![](/assets/img/bJWy8Q6s6_6e33e646a04884d4505c9efd49a656df.png)
+
+![](/assets/img/bJWy8Q6s6_09f651b94480f83ce2c40ef3fcaf888f.png)
+
+
+
+
+
+### Design a Kubernetes Cluster
+
+![](/assets/img/bJWy8Q6s6_3913b366a451757d8d7a320fc5f214a3.png)
+
+
+
 # Cheat Sheet
 
 Create Nginx Pod

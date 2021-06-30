@@ -110,4 +110,22 @@ spec:
 status: {}
 ```
 
+## Multiline args
+
+https://stackoverflow.com/questions/65331974/kubernetes-long-args-how-to-break-long-arguments-into-separate-line-in-yaml-fil
+
+```yaml
+--- 
+args: 
+  - -c  👈 array multiline notation
+  - |
+      while true; do echo hello; sleep 10;done,
+      while true; do echo hello; sleep 10;done,
+      while true; do echo hello; sleep 10;done,
+      while true; do echo hello; sleep 10;done,
+      while true; do echo hello; sleep 10;done,
+      while true; do echo hello; sleep 10;done,
+command: 
+  - /bin/sh
+```
 
