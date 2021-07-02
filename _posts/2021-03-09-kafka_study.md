@@ -154,6 +154,13 @@ public class ProducerDemo {
 ```
 
 
+## Python
+
+https://docs.confluent.io/platform/current/tutorials/examples/clients/docs/python.html?utm_medium=sem&utm_source=google&utm_campaign=ch.sem_br.nonbrand_tp.prs_tgt.kafka_mt.xct_rgn.latam_lng.eng_dv.all_con.kafka-python&utm_term=python%20kafka&creative=&device=c&placement=&gclid=CjwKCAjwrPCGBhALEiwAUl9X01Z9Y44ts_HRaUIMJYfx353oQiyNLmJpYAYoqebV32iNLx81imlkgRoC_YgQAvD_BwE
+
+
+
+
 
 
 

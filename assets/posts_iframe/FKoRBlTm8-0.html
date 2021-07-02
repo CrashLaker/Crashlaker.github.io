@@ -1,66 +1,92 @@
 <html>
 <head>
 <style>
-img {
-   /* -webkit-animation: mover 2s infinite  alternate;
-    animation: mover 2s infinite  alternate;*/
-  position:absolute;
-  top:0;
-  left:0;
+*{
+margin:0;
+padding:0;
 }
-img.img1{
-  -webkit-animation: mover1 2s  infinite alternate;
+img{
+position:absolute;
+}
+.img1 {
+top: 5px;
+z-index:3;
+}
+.img2 {
+top: 40px;
+z-index:2;
+}
+.img3 {
+top: 80px;
+z-index:1;
+}
+ 
+img.spin {
+  
+  perspective: 100px;
+  animation: spinner 3s infinite linear;
+  transform-style: preserve-3d;
+  transform: rotate3d(1,0,0,65deg) 
+             rotate3d(0,1,0,10deg) 
+             rotate3d(0,0,1,-45deg);
+  
+}
+ @keyframes spinner {
+    
+0%{
+      transform: rotate3d(1,0,0,65deg) 
+             rotate3d(0,1,0,10deg) 
+             rotate3d(0,0,1,-45deg);
+           }
+    
+100% {
+      transform: rotate3d(1,0,0,65deg) 
+             rotate3d(0,1,0,10deg) 
+             rotate3d(0,0,1,310deg);
+      }
+
+
+}
+/* img.img1 {
+    /*transform: rotateX(0deg) rotateY(0.2deg) rotateZ(0deg);*/
+    transform: rotateX(-64deg) rotateY(0deg) rotateZ(0deg) rotate3d(0, 0.2, 0, -0.52rad);
+  }
+ @keyframes spinner {
+    0%{
+      transform: rotate3d(1, -1, 0, 0deg) rotate3d(1, 1, 0, 80deg);
+       */    }
+    100% {
+      transform: rotate3d(1, -1, 0, 360deg) rotate3d(1, 1, 0, 80deg);
+       */      }
+}*/
+  /*img.img1{
+    -webkit-animation: mover1 2s  infinite alternate;
     animation: mover1 2s   infinite alternate;
-  z-index:3;
-}
-img.img2{
-  -webkit-animation: mover2 2s   infinite alternate;
-    animation: mover2 2s   infinite alternate;
-  z-index:2;
-}
-img.img3{
-  -webkit-animation: mover3 2s   infinite alternate;
-    animation: mover3 2s   infinite alternate;
-  z-index:1;
-}
+    z-index:3;
+  }
 @-webkit-keyframes mover1 {
     0% { transform: translateY(0); }
+    50% { transform: rotate(20deg); }
     100% { transform: translateY(20px); }
 }
 @keyframes mover1 {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(20px); }
-}
-@-webkit-keyframes mover2 {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(40px); }
-}
-@keyframes mover2 {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(40px); }
-}
-@-webkit-keyframes mover3 {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(60px); }
-}
-@keyframes mover3 {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(60px); }
-}
-
-.container {
-  position: relative;
-  height:300px;
-}
-</style>
-</head>
-<body>
-
-<div class="container" style="height:190px;">
-    <img class="img1" src="/assets/files/FKoRBlTm8_0_1-4.png"/>
-    <img class="img2" src="/assets/files/FKoRBlTm8_1_2.png"/>
-    <img class="img3" src="/assets/files/FKoRBlTm8_2_3.png"/>    
-</div>
-
-<script type="text/javascript" src="https://crashlaker.github.io/static/js/iframe-resize-content.js"></script></body>
-</html>
+    0% { transform: rotate3d(0, 1, 0.5, 0deg); }
+    100% { transform: rotateX(0deg) rotateY(0.2deg) rotateZ(0deg); }
+    /*100% { transform: rotate3d(0, 1, 5, 0deg); }*/
+    /*100% { transform: translateY(20px); }*/
+}*/
+  </style>
+  </head>
+  <body>
+  <div style="width:100%;height:400px;position:relative;margin-top:-80px;">
+<img class="spin img1" src="/assets/files/FKoRBlTm8_2_hermes-plan1.png">
+<img class="spin img2" src="/assets/files/FKoRBlTm8_3_hermes-plan2.png">
+<img class="spin img3" src="/assets/files/FKoRBlTm8_4_hermes-plan3.png">
+  </div>
+  <script>
+    setTimeout(() => {
+        document.querySelector('body').style.height = '300px' 
+    }, 10000)
+  </script>
+  <script type="text/javascript" src="https://crashlaker.github.io/static/js/iframe-resize-content.js"></script></body>
+  </html>

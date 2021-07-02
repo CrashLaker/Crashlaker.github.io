@@ -27,6 +27,8 @@ date: "2020-09-23 12:58:55.215000+00:00"
         * https://github.com/algenty/grafana-flowcharting/issues/145
         * Gauge chart
             * https://github.com/algenty/grafana-flowcharting/issues/145#issuecomment-624335471
+    * Feature Request - Support sparklines instead of graphs
+        * https://github.com/algenty/grafana-flowcharting/issues/167
     * Change image based on condition
         * https://github.com/algenty/grafana-flowcharting/issues/162#issuecomment-628038478
     * Dynamic charts
