@@ -1,12 +1,16 @@
 ---
 layout: post
-title: "Grafana Tempo Study"
+title: "Telemetry Study - Grafana Tempo Study"
 comments: true
 date: "2021-06-30 23:00:01.999000+00:00"
 ---
 
 
+* https://dev.to/antongoncharov/distributed-logs-and-tracing-with-spring-apache-camel-opentelemetry-and-grafana-example-554e
 
+
+
+## Grafana Tempo
 
 https://grafana.com/docs/tempo/latest/api_docs/pushing-spans-with-http/
 
