@@ -12,6 +12,40 @@ date: "2021-05-10 23:35:12.856000+00:00"
     * https://github.com/grafana/loki/issues/3694
     
     
+## Bash
+
+https://grafana.com/docs/loki/latest/api/#examples-4
+
+```bash
+curl -v -H "Content-Type: application/json" \
+        -XPOST -s "http://localhost:3100/loki/api/v1/push" \
+        --data-raw \
+  '{"streams": [{ "stream": { "foo": "bar2" }, "values": [ [ "1570818238000000000", "fizzbuzz" ] ] }]}'
+```
+
+### Stdin
+
+https://grafana.com/docs/loki/latest/clients/promtail/troubleshooting/
+
+```bash
+cat my.log | promtail --stdin --client.url http://127.0.0.1:3100/loki/api/v1/push
+```
+
+```bash
+cat my.log | promtail --stdin  \
+                      --client.url http://127.0.0.1:3100/loki/api/v1/push \
+                      --client.external-labels=k1=v1,k2=v2
+```
+
+```bash
+ssh <host> "tail -n0 -F <file> " | \
+.promtail --stdin  \
+          --client.url http://127.0.0.1:3100/loki/api/v1/push \
+          --client.external-labels=k1=v1,k2=v2
+```
+
+
+## Pipelines
  
 https://grafana.com/docs/loki/latest/clients/promtail/pipelines/
 
