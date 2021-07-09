@@ -94,3 +94,43 @@ def format_span_id(span_id: int) -> str:
     """
     return format(span_id, "016x")
 ```
+
+
+## Loki
+
+
+```python
+logdata = {
+    "traceId": traceId,
+    "status_code": 200,
+    "path": "/"
+}
+for i in range(60):
+    ds = datetime.datetime(2021,7,6,23,49) + datetime.timedelta(seconds=i)
+    print(ds)
+    timestamp = int(ds.timestamp()*1000000000)
+    logdata = "path=\"/foo2\" status=201 a=2 b=5"
+    logdata = "fizzbuzz"
+    logdata = "test"
+    logdata = f"path=\"/foo2\" status=204 a=2 b=5 c=3 d=9 traceID={traceId}"
+    payload = {
+        "streams": [
+            {
+                "stream": {
+                    "__name__": "applog",
+                    "foo": "bar3",
+                    "job": "bar3",
+                },
+                "values": [
+                    [str(timestamp), logdata],
+                ]
+            }
+        ]
+    }
+    headers = {
+        "Content-type": "application/json"
+    }
+    rs = requests.post(url_loki, json=payload)
+    print(rs.text)
+    #rs = requests.post(url_loki, headers=headers, data=json.dumps(payload))
+```
