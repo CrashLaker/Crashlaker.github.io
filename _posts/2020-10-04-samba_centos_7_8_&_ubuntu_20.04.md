@@ -78,6 +78,7 @@ inside `smb.conf`
 
 `/usr/local/bin/dfree`
 ```
+#!/bin/sh
 echo 10000000000 10000000000
 ```
 
