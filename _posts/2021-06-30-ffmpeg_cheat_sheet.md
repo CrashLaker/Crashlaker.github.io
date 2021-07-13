@@ -25,6 +25,24 @@ So, you could use the following command to force the 30 Hz frame rate and High p
 ffmpeg -i input.wmv -c:v libx264 -crf 23 -profile:v high -r 30 -c:a aac -q:a 100 -ar 48000 output.mp4
 ```
 
+```bash
+#!/bin/bash
+
+
+find . -mmin +60 -iname "*.wmv" | while read filename; do 
+    filenameto=$(echo $filename | sed 's/\.wmv$/\.mp4/g')
+    echo "filename: $filename"; 
+    [ -f "${filename}.mp4" ] && continue
+    docker run --entrypoint=/bin/bash -v "`pwd`:/local" linuxserver/ffmpeg -c "
+        ffmpeg -i \"/local/${filename}\" \
+                -c:v libx264 \
+                -crf 23 \
+                -c:a aac \
+                -q:a 100 \
+                \"/local/${filename}.mp4\"
+        "
+done
+```
 
 
 
