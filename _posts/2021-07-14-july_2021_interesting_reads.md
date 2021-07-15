@@ -22,4 +22,12 @@ categories:  [monthly-awesome]
  * Dropbox Engineering Career Framework
      * https://dropbox.github.io/dbx-career-framework/overview.html
  * https://workplace.stackexchange.com/questions/174534/how-can-i-avoid-being-blamed-for-project-management-failure-when-i-am-merely-a-s
- * https://github.com/academind/react-complete-guide-code/tree/18-diving-into-redux/code
+ * Vital art of talking to strangers
+     * https://www.economist.com/books-and-arts/2021/07/10/the-vital-art-of-talking-to-strangers
+     * Books
+         * Hello, Stranger. By Will Buckingham. Granta, 336 pages
+         * The Power of Strangers. By Joe Keohane. Random House; 352 pages.
+         * Fractured. By Jon Yates. Harper North. 348 pages.
+ * React - The Complete Guide
+     * https://github.com/academind/react-complete-guide-code/tree/18-diving-into-redux/code
+     * https://github.com/academind/react-complete-guide-code/tree/19-advanced-redux
