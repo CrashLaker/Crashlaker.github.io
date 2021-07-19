@@ -31,3 +31,5 @@ categories:  [monthly-awesome]
  * React - The Complete Guide
      * https://github.com/academind/react-complete-guide-code/tree/18-diving-into-redux/code
      * https://github.com/academind/react-complete-guide-code/tree/19-advanced-redux
+ * JupyterLite: Jupyter ❤️ WebAssembly ❤️ Python
+     * https://blog.jupyter.org/jupyterlite-jupyter-%EF%B8%8F-webassembly-%EF%B8%8F-python-f6e2e41ab3fa

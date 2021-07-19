@@ -8,6 +8,24 @@ tags:  [docker,codeserver,codesk]
 ---
 
 
+
+```yaml
+version: '3'
+services:
+  codeserver:
+    image: crashlaker/mycodeserver:v1
+    restart: always
+    volumes:
+      - ./data:/home/coder/project
+    ports:
+      - 8081:8080 # live server
+      - 8444:8443 # dev server
+      - 9091:9090 # back server
+    command: ["-config.file", "/config.yaml"]
+```
+
+
+
 `codercom/code-server --allow-http --auth none --port 8443`
 
 ```bash
