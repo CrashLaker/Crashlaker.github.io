@@ -35,3 +35,5 @@ categories:  [monthly-awesome]
      * https://blog.jupyter.org/jupyterlite-jupyter-%EF%B8%8F-webassembly-%EF%B8%8F-python-f6e2e41ab3fa
  * Review Harvester Beta 2 - virtualização em kubernetes
      * https://www.youtube.com/watch?v=WK6Pu5hZN10&ab_channel=SUSEBrasil
+ * What Every Programmer Should Know About SSDs
+     * https://databasearchitects.blogspot.com/2021/06/what-every-programmer-should-know-about.html

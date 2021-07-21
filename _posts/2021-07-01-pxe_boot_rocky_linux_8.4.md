@@ -84,6 +84,19 @@ dr-xr-xr-x    2 0        0             256 Jun 20 16:15 isolinux
 -r--r--r--    1 0        0              86 Jun 20 16:13 media.repo
 ```
 
+## Interface
+
+`/etc/sysconfig/network-scripts/ifcfg-ens224`
+
+```bash
+DEVICE=ens224
+BOOTPROTO=static
+ONBOOT=yes
+IPADDR=10.6.0.1
+NETMASK=255.255.0.0
+GATEWAY=10.6.0.1
+```
+
 ## DHCP
 https://www.lisenet.com/2018/configure-dhcp-failover-with-dynamic-dns-on-centos-7/
 
@@ -104,8 +117,10 @@ allow booting;
 allow bootp;
 next-server 10.6.0.1; # Katello TFTP
 filename "pxelinux.0";
-default-lease-time 86400; # 1 day
-max-lease-time 86400; # 1 day
+#default-lease-time 86400; # 1 day
+#max-lease-time 86400; # 1 day
+default-lease-time -1;
+max-lease-time -1;
 
 ddns-update-style interim;
 
@@ -117,7 +132,7 @@ subnet 10.6.0.0 netmask 255.255.0.0 {
   option broadcast-address 10.6.0.255;
   option routers 10.6.0.1;
   #option domain-name-servers dns1.hl.local, dns2.hl.local;
-  option domain-search "pxe.local";
+  option domain-search "pxe.local", "pxe2.local";
   range 10.6.0.10 10.6.0.200;
 }
 ```
@@ -228,16 +243,29 @@ pwpolicy luks --minlen=6 --minquality=1 --notstrict --nochanges --notempty
 ```
 
 ```bash
-$mkdir -p /var/lib/tftpboot/networkboot/Rocky8
-$cp -pv /var/ftp/pub/pxe/Rocky8/images/pxeboot/{initrd.img,vmlinuz} /var/lib/tftpboot/networkboot/Rocky8/
+mkdir -p /var/lib/tftpboot/networkboot/Rocky8
+cp -pv /var/ftp/pub/pxe/Rocky8/images/pxeboot/{initrd.img,vmlinuz} /var/lib/tftpboot/networkboot/Rocky8/
 ```
 
-`/var/lib/tftpboot/pxelinux.cfg/default`
+
+```
+yum install syslinux -y
+cp -prv /usr/share/syslinux/* /var/lib/tftpboot/
+```
 
 ```bash
-label Install Rocky Linux 8 K8s Node
+[ ! -d /var/lib/tftpboot/pxelinux.cfg ] && mkdir /var/lib/tftpboot/pxelinux.cfg
+#/var/lib/tftpboot/pxelinux.cfg/default
+```
+
+```bash
+default menu.c32
+prompt 0
+timeout 30
+menu title Homelab PXE Menu
+label Install Rocky 8.4 Server
   kernel /networkboot/Rocky8/vmlinuz
-  append initrd=/networkboot/Rocky8/initrd.img inst.repo=ftp://10.6.0.1/pub/pxe/Rocky8 inst.ks=ftp://10.6.0.1/pub/pxe/rocky8-k8s-ks.cfg
+  append initrd=/networkboot/Rocky8/initrd.img inst.repo=ftp://10.6.0.1/pub/pxe/Rocky8 ks=ftp://10.6.0.1/pub/pxe/rocky8-ks.cfg
 ```
 
 
@@ -283,4 +311,35 @@ sudo iptables -A FORWARD -m state \
 ```
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
 ```
+
+
+`rc.local`
+
+```
+
+iptables -A FORWARD -o ens192 -j ACCEPT
+iptables -A FORWARD -m state --state ESTABILISHED,RELATED -i ens192 -j ACCEPT
+iptables -A FORWARD -m state --state ESTABLISHED,RELATED -i ens192 -j ACCEPT
+iptables -t nat -A POSTROUTING -o ens192 -j MASQUERADE
+iptables -A FORWARD -o ens224 -j ACCEPT
+iptables -A FORWARD -m state --state ESTABLISHED,RELATED -i ens224 -j ACCEPT
+iptables -t nat -A POSTROUTING -o ens224 -j MASQUERADE
+
+touch /var/lock/subsys/local
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
