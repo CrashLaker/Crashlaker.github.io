@@ -37,3 +37,5 @@ categories:  [monthly-awesome]
      * https://www.youtube.com/watch?v=WK6Pu5hZN10&ab_channel=SUSEBrasil
  * What Every Programmer Should Know About SSDs
      * https://databasearchitects.blogspot.com/2021/06/what-every-programmer-should-know-about.html
+ * That Time I Deleted A Production Database, or How Everyone Makes Mistakes
+     * https://threadreaderapp.com/thread/1405826698839576576.html
