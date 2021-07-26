@@ -6,7 +6,7 @@ date: "2021-07-26 06:15:01.865000+00:00"
 ---
 
 
-Documenting attempt 1 on trying to CDC RDS PostgreSQL 11.10 to Hermes
+Documenting attempt 1 on trying to CDC RDS PostgreSQL 11.10
 
 ## Aux
 ```bash
@@ -112,7 +112,7 @@ curl -i -X POST \
     "config": { 
         "connector.class": "io.debezium.connector.postgresql.PostgresConnector", 
         "tasks.max": "1", 
-        "database.hostname": "hermes-pg-dev1.cfrwudrp3d2n.sa-east-1.rds.amazonaws.com", 
+        "database.hostname": "dbhostname", 
         "database.port": "5432", 
         "database.user": "postgres", 
         "database.password": "admin", 
