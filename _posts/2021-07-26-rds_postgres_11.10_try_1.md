@@ -6,9 +6,7 @@ date: "2021-07-26 06:15:01.865000+00:00"
 ---
 
 
-```{admonition} Attempt 1
 Documenting attempt 1 on trying to CDC RDS PostgreSQL 11.10 to Hermes
-```
 
 ## Aux
 ```bash
@@ -117,7 +115,7 @@ curl -i -X POST \
         "database.hostname": "hermes-pg-dev1.cfrwudrp3d2n.sa-east-1.rds.amazonaws.com", 
         "database.port": "5432", 
         "database.user": "postgres", 
-        "database.password": "btgadmin", 
+        "database.password": "admin", 
         "database.dbname": "dvdrental", 
         "database.server.name": "dbserver1", 
         "database.include.list": "inventory", 
@@ -169,8 +167,8 @@ import requests
 conn = psycopg2.connect(
     dbname="dvdrental",
     user="postgres",
-    password="btgadmin",
-    host="hermes-pg-dev1.cfrwudrp3d2n.sa-east-1.rds.amazonaws.com",
+    password="admin",
+    host="db_host",
     port=5432,
 )
 

@@ -77,8 +77,6 @@ import pandas as pd
 conn = psycopg2.connect(
     dbname="dvdrental",
     user="postgres",
-    #password="btgadmin",
-    #host="hermes-pg-dev1.cfrwudrp3d2n.sa-east-1.rds.amazonaws.com",
     password="admin",
     host="localhost",
     port=5432,
@@ -86,8 +84,6 @@ conn = psycopg2.connect(
 conn2 = psycopg2.connect(
     dbname="dvdrental4",
     user="postgres",
-    #password="btgadmin",
-    #host="hermes-pg-dev1.cfrwudrp3d2n.sa-east-1.rds.amazonaws.com",
     password="admin",
     host="localhost",
     port=5432,
