@@ -33,6 +33,8 @@ def r_query():
     dto = dateutil.parser.parse(req["range"]["to"])
     from_ms = dfrom.timestamp()*1000
     to_ms = dto.timestamp()*1000
+    
+    target = req['targets'][0]['target']
 
     response = [
         {
