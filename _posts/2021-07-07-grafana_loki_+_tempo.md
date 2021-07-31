@@ -134,3 +134,23 @@ for i in range(60):
     print(rs.text)
     #rs = requests.post(url_loki, headers=headers, data=json.dumps(payload))
 ```
+
+
+
+## Tempo Tracer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
