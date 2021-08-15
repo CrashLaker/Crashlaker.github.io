@@ -15,16 +15,7 @@ img.img1{
 @-webkit-keyframes mover1 {
     0% { transform: translateY(0); }
 ```
-{% raw %}
-<iframe id="myIframe0" style="border:none;" src="https://crashlaker.github.io/assets/posts_iframe/FKoRBlTm8-0.html"></iframe>
-<script>
-setTimeout(() => {let myiframe = iFrameResize({ 
-                    log: false, 
-                    enablePublicMethods: true,
-                }, '#myIframe0'); }, 1000)
-</script>
-{% endraw %}
-    
+crash_iframe[http://automation/blog/css-animation/anim1.html]
 
 ```
 img.img1{
@@ -38,16 +29,7 @@ img.img1{
 }
 
 ```
-{% raw %}
-<iframe id="myIframe1" style="border:none;" src="https://crashlaker.github.io/assets/posts_iframe/FKoRBlTm8-1.html"></iframe>
-<script>
-setTimeout(() => {let myiframe = iFrameResize({ 
-                    log: false, 
-                    enablePublicMethods: true,
-                }, '#myIframe1'); }, 1000)
-</script>
-{% endraw %}
-    
+crash_iframe[http://automation/blog/css-animation/anim2.html]
 
 ```
 img.spin {
@@ -78,13 +60,4 @@ img.spin {
 }
 
 ```
-{% raw %}
-<iframe id="myIframe2" style="border:none;" src="https://crashlaker.github.io/assets/posts_iframe/FKoRBlTm8-2.html"></iframe>
-<script>
-setTimeout(() => {let myiframe = iFrameResize({ 
-                    log: false, 
-                    enablePublicMethods: true,
-                }, '#myIframe2'); }, 1000)
-</script>
-{% endraw %}
-    
+crash_iframe[http://automation/blog/css-animation/anim3.html]
