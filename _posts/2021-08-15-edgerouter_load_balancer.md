@@ -29,4 +29,4 @@ set firewall modify balance rule 20 modify lb-group G
 commit
 ```
 
-{%youtube 1J475E-0rIU %}
+<iframe width="612" height="344" src="https://www.youtube.com/embed/1J475E-0rIU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
