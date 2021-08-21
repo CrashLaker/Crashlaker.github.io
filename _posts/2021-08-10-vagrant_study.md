@@ -62,7 +62,17 @@ end
 **Commands**
 
 ```bash
+vagrant up
+vagrant reload
+vagrant destroy -f
+```
 
+killvms from https://stackoverflow.com/posts/44540290/revisions
+```bash
+function killvms() {
+  VBoxManage list runningvms | awk '{print $2;}' | xargs -I vmid VBoxManage controlvm vmid poweroff
+  VBoxManage list vms | awk '{print $2;}' | xargs -I vmid VBoxManage unregistervm --delete vmid
+}
 ```
 
 **Package**
