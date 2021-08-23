@@ -6,7 +6,38 @@ date: "2021-08-07 16:06:02.106000+00:00"
 ---
 
 
+### Pthread
 
+
+```c
+pthread_t tid_thread;
+if (pthread_create(&tid_thread, NULL, listen_svc, NULL)){
+    printf('error joining thread\n');
+}
+if (pthread_join(tid_thread)){
+    printf('error thread');
+}
+void listen_svc(){
+    //run
+}
+```
+
+**with arguments**
+
+```c
+pthread_t tid_thread;
+int a = 2;
+if (pthread_create(&tid_thread, NULL, inout_thread, &a)){
+    printf('error joining thread\n');
+}
+if (pthread_join(tid_thread)){
+    printf('error thread');
+}
+void *inout_thread(void *v){
+    //run
+    int *tid = (int*) v;
+}
+```
 
 
 ### Shared Memory
