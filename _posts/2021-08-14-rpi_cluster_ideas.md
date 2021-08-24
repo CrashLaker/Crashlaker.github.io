@@ -5,6 +5,11 @@ comments: true
 date: "2021-08-14 16:00:05.457000+00:00"
 ---
 
+
+![](/assets/img/50LmxrFH6_c626cd349b02b2d5ff1039d623240993.png)
+
+
+
 https://www.reddit.com/r/functionalprint/comments/p2wuvc/high_density_raspberry_pi_mount/
 
 ![](/assets/img/50LmxrFH6_556065e0451bd052b34db5ac3853bb32.png)
