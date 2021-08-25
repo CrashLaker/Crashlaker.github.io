@@ -57,6 +57,12 @@ zpool destroy data6
 zpool import -D data6
 ```
 
+## Add spare
+https://forums.freebsd.org/threads/adding-new-drive-as-a-spare-to-zpool.68196/
+```shell
+zpool add (pool) spare (disk)
+```
+
 ## Snapshot & Clone
 ```shell
 zfs snapshot <pool>/<fs>@snap1
