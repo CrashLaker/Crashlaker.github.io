@@ -8,6 +8,7 @@ date: "2021-08-14 16:00:05.457000+00:00"
 
 ![](/assets/img/50LmxrFH6_c626cd349b02b2d5ff1039d623240993.png)
 
+![](/assets/img/50LmxrFH6_631e2c74359a1669136b3945e07442c2.png)
 
 
 https://www.reddit.com/r/functionalprint/comments/p2wuvc/high_density_raspberry_pi_mount/
